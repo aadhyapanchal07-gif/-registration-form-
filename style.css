@@ -10,7 +10,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: levender;
+            background: lavender;
             transition: background 0.25s, color 0.2s;
             padding: 1.5rem;
         }
