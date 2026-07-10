@@ -1,0 +1,688 @@
+/* =====================================
+   GOOGLE FONT
+===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =====================================
+   RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* =====================================
+   BODY
+===================================== */
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+    position:relative;
+
+    background:linear-gradient(
+    -45deg,
+    #020617,
+    #0f172a,
+    #1e3a8a,
+    #312e81,
+    #581c87,
+    #0f172a);
+
+    background-size:500% 500%;
+    animation:galaxy 18s ease infinite;
+}
+
+/* =====================================
+   GALAXY ANIMATION
+===================================== */
+
+@keyframes galaxy{
+
+0%{
+background-position:0% 50%;
+}
+
+25%{
+background-position:50% 100%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+75%{
+background-position:50% 0%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* =====================================
+   STARS
+===================================== */
+
+.stars{
+
+position:absolute;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+
+}
+
+.stars::before{
+
+content:"";
+
+position:absolute;
+
+width:200%;
+height:200%;
+
+background-image:
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(#60a5fa 1px,transparent 1px),
+radial-gradient(#7c3aed 1px,transparent 1px);
+
+background-size:
+70px 70px,
+120px 120px,
+180px 180px;
+
+opacity:.4;
+
+animation:moveStars 80s linear infinite;
+
+}
+
+.stars::after{
+
+content:"";
+
+position:absolute;
+
+width:200%;
+height:200%;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:150px 150px;
+
+opacity:.25;
+
+animation:moveStarsReverse 120s linear infinite;
+
+}
+
+@keyframes moveStars{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(-400px,-400px);
+
+}
+
+}
+
+@keyframes moveStarsReverse{
+
+from{
+
+transform:translate(-400px,-400px);
+
+}
+
+to{
+
+transform:translate(0,0);
+
+}
+
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
+
+.container{
+
+position:relative;
+
+width:430px;
+
+padding:40px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.18);
+
+box-shadow:
+0 0 25px rgba(59,130,246,.35),
+0 0 60px rgba(124,58,237,.25),
+0 20px 45px rgba(0,0,0,.5);
+
+transition:.35s;
+
+}
+
+/* =====================================
+   TITLE
+===================================== */
+
+.container h1{
+
+color:white;
+
+text-align:center;
+
+font-size:32px;
+
+margin-bottom:10px;
+
+}
+
+.container p{
+
+text-align:center;
+
+color:#d1d5db;
+
+margin-bottom:30px;
+
+}
+
+/* =====================================
+   INPUT BOX
+===================================== */
+
+.inputBox{
+
+position:relative;
+
+margin-bottom:25px;
+
+}
+
+.inputBox input,
+.inputBox select{
+
+width:100%;
+
+height:55px;
+
+padding:0 55px 0 50px;
+
+border-radius:12px;
+
+border:2px solid rgba(255,255,255,.15);
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+font-size:15px;
+
+outline:none;
+
+transition:.35s;
+
+}
+
+.inputBox input::placeholder{
+
+color:transparent;
+
+}
+
+.inputBox option{
+
+color:black;
+
+}
+
+/* =====================================
+   FLOATING LABEL
+===================================== */
+
+.inputBox label{
+
+position:absolute;
+
+left:50px;
+
+top:16px;
+
+color:#cbd5e1;
+
+pointer-events:none;
+
+transition:.35s;
+
+}
+
+.inputBox input:focus~label,
+.inputBox input:valid~label,
+.inputBox select:focus~label,
+.inputBox select:valid~label{
+
+top:-10px;
+
+left:15px;
+
+padding:2px 10px;
+
+background:#0f172a;
+
+border-radius:30px;
+
+font-size:12px;
+
+color:#60a5fa;
+
+}
+
+/* =====================================
+   ICONS
+===================================== */
+
+.inputBox i:first-child{
+
+position:absolute;
+
+left:18px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+color:#60a5fa;
+
+font-size:18px;
+
+}
+
+/* =====================================
+   PASSWORD EYE
+===================================== */
+
+#togglePassword{
+
+position:absolute;
+
+right:18px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+cursor:pointer;
+
+color:#60a5fa;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+#togglePassword:hover{
+
+color:white;
+
+transform:translateY(-50%) scale(1.15);
+
+}
+
+/* =====================================
+   INPUT GLOW
+===================================== */
+
+.inputBox input:focus,
+.inputBox select:focus{
+
+border-color:#3b82f6;
+
+box-shadow:
+0 0 10px #3b82f6,
+0 0 25px rgba(59,130,246,.45);
+
+}/* =====================================
+   GENDER SECTION
+===================================== */
+
+.gender{
+    margin:20px 0;
+    color:white;
+}
+
+.gender h3{
+    margin-bottom:12px;
+    font-size:17px;
+    color:#60a5fa;
+}
+
+.gender-options{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.gender-options label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    cursor:pointer;
+    color:#fff;
+    transition:.3s;
+}
+
+.gender-options label:hover{
+    color:#60a5fa;
+}
+
+.gender input{
+    accent-color:#3b82f6;
+    cursor:pointer;
+}
+
+/* =====================================
+   BUTTON
+===================================== */
+
+button{
+    position:relative;
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    overflow:hidden;
+
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:1px;
+
+    background:linear-gradient(
+        270deg,
+        #2563eb,
+        #7c3aed,
+        #06b6d4,
+        #2563eb
+    );
+
+    background-size:400% 400%;
+    animation:buttonGradient 6s ease infinite;
+
+    transition:.35s;
+}
+
+@keyframes buttonGradient{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 15px #3b82f6,
+    0 0 30px #7c3aed,
+    0 0 50px #06b6d4;
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =====================================
+   BUTTON SHINE
+===================================== */
+
+button::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.5),
+transparent
+);
+
+transition:.7s;
+
+}
+
+button:hover::before{
+
+left:100%;
+
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer{
+
+margin-top:20px;
+
+text-align:center;
+
+color:#d1d5db;
+
+font-size:14px;
+
+}
+
+.footer a{
+
+color:#60a5fa;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+.footer a:hover{
+
+color:white;
+
+text-decoration:underline;
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:500px){
+
+.container{
+
+width:95%;
+padding:25px;
+
+}
+
+.container h1{
+
+font-size:28px;
+
+}
+
+.inputBox input,
+.inputBox select{
+
+height:50px;
+font-size:14px;
+
+}
+
+button{
+
+height:50px;
+font-size:16px;
+
+}
+
+.gender-options{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+}
+
+/* =====================================
+   SHOOTING STAR
+===================================== */
+
+body::after{
+
+content:"";
+
+position:absolute;
+
+top:-20%;
+
+left:-20%;
+
+width:2px;
+
+height:120px;
+
+background:linear-gradient(
+white,
+transparent
+);
+
+transform:rotate(45deg);
+
+animation:shootingStar 8s linear infinite;
+
+opacity:.7;
+
+}
+
+@keyframes shootingStar{
+
+0%{
+
+transform:translate(-200px,-200px) rotate(45deg);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translate(1600px,900px) rotate(45deg);
+
+opacity:0;
+
+}
+
+}
+
+/* =====================================
+   CONTAINER HOVER
+===================================== */
+
+.container:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 0 30px rgba(96,165,250,.7),
+0 0 60px rgba(124,58,237,.35),
+0 25px 50px rgba(0,0,0,.55);
+
+}
+
+/* =====================================
+   SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#3b82f6;
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0f172a;
+
+}

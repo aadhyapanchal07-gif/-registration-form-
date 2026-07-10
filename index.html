@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Galaxy Registration Form</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Animated Stars -->
+    <div class="stars"></div>
+
+    <!-- Registration Form -->
+    <div class="container">
+
+        <form id="registerForm">
+
+            <h1>Create Account</h1>
+
+            <p>Join the Future Today</p>
+
+            <!-- Full Name -->
+            <div class="inputBox">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input
+                    type="text"
+                    id="fullname"
+                    required>
+
+                <label>Full Name</label>
+
+            </div>
+
+            <!-- Email -->
+            <div class="inputBox">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                    type="email"
+                    id="email"
+                    required>
+
+                <label>Email Address</label>
+
+            </div>
+
+            <!-- Password -->
+            <div class="inputBox passwordBox">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                    type="password"
+                    id="password"
+                    required>
+
+                <label>Password</label>
+
+                <span id="togglePassword">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+
+            </div>
+
+            <!-- Gender -->
+            <div class="gender">
+
+                <h3>Gender</h3>
+
+                <div class="gender-options">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="Male">
+                        Male
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="Female">
+                        Female
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="Other">
+                        Other
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- Course -->
+            <div class="inputBox">
+
+                <i class="fa-solid fa-book"></i>
+
+                <select id="course" required>
+
+                    <option value=""></option>
+
+                    <option>Web Development</option>
+
+                    <option>Java Programming</option>
+
+                    <option>Python Programming</option>
+
+                    <option>Cyber Security</option>
+
+                    <option>Artificial Intelligence</option>
+
+                    <option>Cloud Computing</option>
+
+                    <option>Data Science</option>
+
+                </select>
+
+                <label>Select Course</label>
+
+            </div>
+
+            <!-- Register Button -->
+            <button type="submit">
+
+                <span>Register</span>
+
+            </button>
+
+            <!-- Footer -->
+            <div class="footer">
+
+                Already have an account?
+
+                <a href="#">Login</a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
